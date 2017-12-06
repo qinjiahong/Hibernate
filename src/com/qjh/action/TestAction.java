@@ -52,7 +52,7 @@ public class TestAction {
 		HibernateUtil.closeSession();*/
 		
 		List<UserBean> list=userService.getAllUser();
-//		System.out.println("list="+list.size());
+		System.out.println("list="+list.size());
 		
 		UserBean user = new UserBean();
 		user.setUser_name("王五aYY");
