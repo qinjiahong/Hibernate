@@ -13,7 +13,6 @@ public class UserDao implements UserService {
 	@Override
 	public List<UserBean> getAllUser() {
 		session = HibernateUtil.getSession();// 从会话工厂获取一个session
-		session.beginTransaction();
 		List<UserBean> list = session.createQuery("from UserBean").list();
 		session.getTransaction().commit();
 		HibernateUtil.closeSession();
@@ -23,7 +22,6 @@ public class UserDao implements UserService {
 	@Override
 	public int insertUser(UserBean bean) {
 		session = HibernateUtil.getSession();// 从会话工厂获取一个session
-		session.beginTransaction();
 		int code = 0;
 		try {
 			session.save(bean);
@@ -41,7 +39,6 @@ public class UserDao implements UserService {
 	@Override
 	public int updateUser(UserBean bean) {
 		session = HibernateUtil.getSession();// 从会话工厂获取一个session
-		session.beginTransaction();
 		int code = 0;
 		try {
 			code = 1;
@@ -59,7 +56,6 @@ public class UserDao implements UserService {
 	@Override
 	public int deleteUser(UserBean bean) {
 		session = HibernateUtil.getSession();// 从会话工厂获取一个session
-		session.beginTransaction();
 		int code=0;
 		try {
 			session.delete(bean);

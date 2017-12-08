@@ -23,13 +23,14 @@
 		<!--执行DDL的类别： create:每次都删除新建 update:存在就修改，不存在就新建 -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<!--是否显示SQL语句 -->
-		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.show_sql">false</property>
 		<!--是否格式化SQL语句 -->
-		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.format_sql">false</property>
 		<!-- 启用getCurrentSession，默认未启用 -->
 		<property name="hibernate.current_session_context_class">thread</property>
 		<!--3、加载配置文件 -->
 		<!--基于xml映射文件： 映射文件加载。路径 -->
-		<mapping resource="com/qjh/mapping/user.hbm.xml"></mapping>
+		<mapping resource="com/qjh/mapping/user.hbm.xml"/>
+		<mapping resource="com/qjh/mapping/shop.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

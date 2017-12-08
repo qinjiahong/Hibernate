@@ -24,6 +24,7 @@ public class HibernateUtil {
             session = factory.openSession();
             //将新建的session放入thredlock中
             threadLock.set(session);
+            session.beginTransaction();
         }
         return session;
     }
